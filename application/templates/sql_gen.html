@@ -2,20 +2,15 @@
 
 {% block body %}
 
-<h1> sql 的作用 </h1>
-<p> sql 的参数 </p>
-<textarea id="sql_1" style="width:1200px;height:200px;">生成的 sql</textarea>
-<button onclick="copy(sql_1)"> 复制</button>
 
 <h1> 1. 查询某个操作码一段日期内的触发次数 </h1>
 <form action="" method="post" novalidate>
     <p> 开始日期 <input type="date" name="begin_date" class="form-control date-picker"/>
         结束日期 <input type="date" name="end_date" class="form-control date-picker"/>
-        操作码 <input type="text" name="action_code"/>
+        操作码 <input type="text" name="opt_cd" value="a000_unlock_wake"/>
+        <input type="hidden" name="sql_id" value="sql_1">
+        <input type="submit" value="提交"/>
     </p>
-
-    <p><input type="submit" value="提交"/></p>
-
 </form>
 <script>
     var defaultDate = document.querySelectorAll('.date-picker');
@@ -25,13 +20,114 @@
         defaultDate[i].valueAsDate = today;
     }
 </script>
-<textarea id="sql_2" style="width:1200px;height:200px;">生成的 sql</textarea>
-<button onclick="copy(sql_2)"> 复制</button>
 
-<h1> sql 的作用 </h1>
-<p> sql 的参数 </p>
-<textarea id="sql_3" style="width:1200px;height:200px;">生成的 sql</textarea>
-<button onclick="copy(sql_2)"> 复制</button>
+
+
+<h1> 2. 查询某个操作码一段日期内的触发人数 </h1>
+<form action="" method="post" novalidate>
+    <p> 开始日期 <input type="date" name="begin_date" class="form-control date-picker"/>
+        结束日期 <input type="date" name="end_date" class="form-control date-picker"/>
+        操作码 <input type="text" name="opt_cd" value="a000_unlock_wake"/>
+        <input type="hidden" name="sql_id" value="sql_2">
+        <input type="submit" value="提交"/>
+    </p>
+</form>
+<script>
+    var defaultDate = document.querySelectorAll('.date-picker');
+    for (var i = 0; i < defaultDate.length; i++) {
+        today = new Date();
+        today.setTime(today.getTime() - 24 * 60 * 60 * 1000)
+        defaultDate[i].valueAsDate = today;
+    }
+</script>
+
+
+
+
+<h1> 3. 某个广告位请求次数统计 </h1>
+<form action="" method="post" novalidate>
+    <p> 开始日期 <input type="date" name="begin_date" class="form-control date-picker"/>
+        结束日期 <input type="date" name="end_date" class="form-control date-picker"/>
+        操作码 <input type="text" name="opt_cd" value="gg_r"/>
+        adv_id <input type="text" name="adv_id" value="uninstall">
+        <input type="hidden" name="sql_id" value="sql_3">
+        <input type="submit" value="提交"/>
+    </p>
+</form>
+<script>
+    var defaultDate = document.querySelectorAll('.date-picker');
+    for (var i = 0; i < defaultDate.length; i++) {
+        today = new Date();
+        today.setTime(today.getTime() - 24 * 60 * 60 * 1000)
+        defaultDate[i].valueAsDate = today;
+    }
+</script>
+
+
+
+<h1> 4. 2个操作步骤的人数漏斗统计 </h1>
+<form action="" method="post" novalidate>
+    <p> 开始日期 <input type="date" name="begin_date" class="form-control date-picker"/>
+        结束日期 <input type="date" name="end_date" class="form-control date-picker"/>
+        操作码1 <input type="text" name="opt_cd_1" value="t000_open_app"/>
+        操作码2 <input type="text" name="opt_cd_2" value="a000_enter_home">
+        <input type="hidden" name="sql_id" value="sql_4">
+        <input type="submit" value="提交"/>
+    </p>
+</form>
+<script>
+    var defaultDate = document.querySelectorAll('.date-picker');
+    for (var i = 0; i < defaultDate.length; i++) {
+        today = new Date();
+        today.setTime(today.getTime() - 24 * 60 * 60 * 1000)
+        defaultDate[i].valueAsDate = today;
+    }
+</script>
+
+
+<h1> 5. 3个操作步骤的人数漏斗统计 </h1>
+<form action="" method="post" novalidate>
+    <p> 开始日期 <input type="date" name="begin_date" class="form-control date-picker"/>
+        结束日期 <input type="date" name="end_date" class="form-control date-picker"/>
+        操作码1 <input type="text" name="opt_cd_1" value="t000_open_app"/>
+        操作码2 <input type="text" name="opt_cd_2" value="a000_enter_home">
+    </p>
+    <p>
+        操作码3 <input type="text" name="opt_cd_3" value="f000_splash_guide">
+        <input type="hidden" name="sql_id" value="sql_5">
+        <input type="submit" value="提交"/>
+    </p>
+</form>
+<script>
+    var defaultDate = document.querySelectorAll('.date-picker');
+    for (var i = 0; i < defaultDate.length; i++) {
+        today = new Date();
+        today.setTime(today.getTime() - 24 * 60 * 60 * 1000)
+        defaultDate[i].valueAsDate = today;
+    }
+</script>
+
+
+<h1> 6. 某天打开次日留存 【不含外广】【具体操作码具体修改】 </h1>
+<form action="" method="post" novalidate>
+    <p> 指定日期 <input type="date" name="target_date" class="form-control date-picker"/>
+        指定操作码 <input type="text" name="other_opt_cd" value="a000_unlock_wake">
+        <input type="hidden" name="sql_id" value="sql_6">
+        <input type="submit" value="提交"/>
+    </p>
+</form>
+<script>
+    var defaultDate = document.querySelectorAll('.date-picker');
+    for (var i = 0; i < defaultDate.length; i++) {
+        today = new Date();
+        today.setTime(today.getTime() - 24 * 60 * 60 * 1000)
+        defaultDate[i].valueAsDate = today;
+    }
+</script>
+
+
+<textarea id="result_sql" style="width:1200px;height:200px;"> {{sql}} </textarea>
+<button onclick="copyText()"> 复制</button>
 
 
 {% endblock %}

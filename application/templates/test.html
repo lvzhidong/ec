@@ -1,0 +1,25 @@
+
+{% extends 'admin/master.html' %}   #为了保持一致，继承admin/master.html模板
+
+{% block body %}
+<h1> sql 的作用 </h1>
+<p> sql 的参数 </p>
+<textarea id="sql_3" style="width:1200px;height:200px;">生成的 sql</textarea>
+<button onclick="copyText(sql_3)"> 复制</button>
+
+<h1> sql 的作用 </h1>
+<p> sql 的参数 </p>
+<textarea id="sql_1" style="width:1200px;height:200px;">生成的 sql</textarea>
+<button onclick="copyText(sql_1)"> 复制</button>
+
+<input type="text" id="input" value="hello">
+<button id="button" onclick="copyText(input)">点击复制</button>
+
+<button id="mybtn"></button>
+<script>
+  $('#mybtn').click(function () {
+    document.execCommand('copy');
+  });
+</script>
+
+{% endblock %}

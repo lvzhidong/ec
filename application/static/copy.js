@@ -1,8 +1,8 @@
 // 实现复制到剪贴板功能函数
-function copy(id){
+function copyText(id_name){
 
   // 获取输入框元素
-  let input = document.getElementById(id)
+  let input = document.getElementById(id_name)
 
   // 选中元素中的文本（必须可编辑）
   input.select()
@@ -17,8 +17,4 @@ function copy(id){
   else{
     window.alert('复制失败！')//反馈信息
   }
-}
-
-function getYesterday() {
-    return document.getElementById('startDate').valueAsDate=new Date()
 }
