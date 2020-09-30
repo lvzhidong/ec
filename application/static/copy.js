@@ -1,5 +1,5 @@
 // 实现复制到剪贴板功能函数
-function copyText(id_name){
+function copyText1(id_name){
 
   // 获取输入框元素
   let input = document.getElementById(id_name)

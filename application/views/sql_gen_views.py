@@ -98,9 +98,9 @@ where t1.num1>t2.num2 or t2.android_id=null
 
 
 class SqlGenView(BaseView):
-    extra_js = [
-        '/static/copy.js',
-    ]
+    # extra_js = [
+    #     '/static/copy.js',
+    # ]
 
     @expose('/', methods=['GET', 'POST'])
     def index(self):

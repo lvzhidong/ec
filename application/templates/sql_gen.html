@@ -127,7 +127,27 @@
 
 
 <textarea id="result_sql" style="width:1200px;height:200px;"> {{sql}} </textarea>
-<button onclick="copyText()"> 复制</button>
+<button onclick="copyText('result_sql')"> 复制</button>
+<script type="text/javascript">
+    function copyText(id_name){
 
+  // 获取输入框元素
+  let input = document.getElementById(id_name)
+
+  // 选中元素中的文本（必须可编辑）
+  input.select()
+
+  // 检测复制命令返回值（是否可用）
+  if(document.execCommand('copy')){
+    document.execCommand('copy')//执行复制到剪贴板
+    window.alert('已复制！')//反馈信息
+  }
+
+  // 无法复制（不可用）
+  else{
+    window.alert('复制失败！')//反馈信息
+  }
+}
+</script>
 
 {% endblock %}
