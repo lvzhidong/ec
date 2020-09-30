@@ -4,5 +4,5 @@
 port=10125
 env=product
 
-exec gunicorn -b127.0.0.1:${port} --threads=2 -e ENV=${env} run:app
+exec gunicorn -b0.0.0.0:${port} --threads=2 -e ENV=${env} run:app
 
