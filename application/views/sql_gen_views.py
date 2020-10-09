@@ -92,7 +92,7 @@ select count(*) from
     (select android_id, count(opt_cd) as num2 from f_evt_sdk_log_101 where dt='{}' and opt_cd='{}' group by android_id) t2 
     on t1.android_id=t2.android_id
     
-where t1.num1>t2.num2 or t2.android_id=null
+where t1.num1>t2.num2 or t2.android_id is null
 """.format(target_date, next_day, target_date, next_day, other_opt_cd)
     return sql
 
